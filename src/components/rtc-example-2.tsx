@@ -1,6 +1,6 @@
 
 /*  
-  --- handleEvent, Generic Types, Children, Function, Type-Definitions ---
+  --- handleEvent, Generic Types, Children, Function, Type-Definitions, Generic Component ---
 */
 
 import * as React from 'react'
@@ -25,7 +25,8 @@ interface InitialName extends Type<string, number> {
 //Type definitions for iframe
 interface IFrameHTMLAttribute extends React.IframeHTMLAttributes<HTMLIFrameElement> {
     height: number | string
-    marginHeight: number | undefined
+    marginHeight: number | undefined,
+    title: string
 }
 
 //Dom Attributes
@@ -36,28 +37,41 @@ interface DOMAttribute {
     //... you can add much more here...
 }
 
+//Generic component (as generic lists)
+interface ListsProps<T> {
+    items: T[] 
+    itemDisplay: (item: T, key:T) => JSX.Element //return JSX Element / React Nodes
+}
 
-//Define Component
+
+//Component
+const GenericComponent:React.FC<ListsProps<number>> = ({ items, itemDisplay }:any) => {
+    return <div>{ items.map(itemDisplay) }</div>
+}
+
+//Component
 const BlurryFace: React.FC<DOMAttribute> = ({ onChange, onClick }) => {
     return <input type="text" onChange={onChange} onClick={onClick} />
 }
 
-
-//Define Component
-const IframeHTMLElement: React.FC<IFrameHTMLAttribute & InitialName> = ({ height, marginHeight, children }) => {
+//Component
+const IframeHTMLElement: React.FC<IFrameHTMLAttribute & InitialName> = ({ height, marginHeight, children, title }) => {
     return (
-        <iframe height={height} marginHeight={marginHeight}>
+        <iframe title={title} height={height} marginHeight={marginHeight}>
             {children}
         </iframe>
     )
 }
 
 
+//Generic Component
 const RTCEx2: React.FC<InitialName> = ({ typeMouseEvent, typeFocusEvent, data, firstName }) => {
+    let user = [1, 2, 3, 4, 5];
+    
     return (
         <React.Fragment>
             {/* Iframe Component */}
-            <IframeHTMLElement height={200} marginHeight={120}>
+            <IframeHTMLElement title="Iframe" height={200} marginHeight={120}>
                 {/* return in array */}
                 <p>{[data, firstName]}</p>
             </IframeHTMLElement>
@@ -74,6 +88,12 @@ const RTCEx2: React.FC<InitialName> = ({ typeMouseEvent, typeFocusEvent, data, f
             <BlurryFace
                 onChange={() => console.log("Event onChange on Input")}
                 onClick={() => console.log("Event onClick on Input")}
+            />
+
+            {/* Generic Component */}
+            <GenericComponent 
+                items={user} 
+                itemDisplay={(item, id) => <p key={id}>{ item }</p>} 
             />
 
         </React.Fragment>
