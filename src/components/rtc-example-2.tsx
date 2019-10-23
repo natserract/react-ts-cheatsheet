@@ -1,13 +1,33 @@
 
 import * as React from 'react'
 
-interface Props {
+/*  
+  --- Event, Generic Types ---
+*/
 
+//Generic
+interface Type<TValues, TDump>{
+    data: [TValues, TDump];
 }
 
-const RTCEx2:React.FC<Props> = () => {
+interface InitialName extends Type<string, number> {
+    handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void,  //event 
+}
+
+const initialFunc = (message: string) => {
+    console.log(message)
+}
+
+const RTCEx2: React.FC<InitialName>= ({ handleClick, data }) => {
     return (
-        <p>Hello</p>
+        <div>
+            <p>Hello</p>
+            <button onClick={handleClick}>
+                Click Me
+            </button>
+            <p>{data}</p>
+            {initialFunc}
+        </div>
     )
 }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import RTCBasic from './components/rtc-example-1'
-
+import RTCEx1 from './components/rtc-example-1'
 
 
 const App: React.FC = () => {
@@ -9,19 +8,22 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">
 
-        {/* Basic */}
-        <RTCBasic
-          text="asdas"
-          age={19}
-          list={['Alfn', 'Surya']}
-          listAge={[2, 3, 4]}
-          listClass={['10', 2, 10, 'A']}
-          role="Developer"
-          handleClick={() => console.log("Void")}
-          color="Black"
-          inlineStyle={{ color:'red', fontSize: 20 }}
-          active={true}
+        {/* Ex1 */}
+        <RTCEx1
+          typeBoolean={ true }
+          typeString="Alfin"
+          typeNumber={27}
+          typeArrayString={['Designer', 'Developer', 'Reader', 'etc']}
+          typeArrayNumber={[0, 3, 5, 8]}
+          typeArrayFixed={['Fantasktic', 1, 2019, 'Inc']}
+          typeAny="Hey!"
+          typeObject={{ color: '#fff', opacity: .4 }}
+          typeStringExt="VSCode"
+          typeStringExtV="TypeScript"
+          typeUnion="Black"
+          typeVoid={() => console.log("Hello! this works")}
         />
+
 
 
       </header>
