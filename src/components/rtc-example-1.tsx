@@ -1,9 +1,10 @@
 
-import React from 'react'
-
 /* Interface 
   --- Data Types (Props), extends interface, enum, readonly---
 */
+
+import React from 'react'
+
 
 enum SelectClassRoom {
     classA = '20 Orang',
@@ -34,7 +35,7 @@ interface Props extends Detail, listsColor {
     typeArrayNumber: number[]  //array number
     typeArrayFixed: [string, number, number, string]  //Fixed types in array
     typeAny: any, //Any types
-    typeObject: object //Object type,
+    typeCSSProp: React.CSSProperties //Object type,
     typeBoolean: boolean, //Boolean type
     optionType?: string // //Not type (Just optional properties you can declare)
     typeVoid: () => void, //Void types: you can return type of the functions not value
@@ -48,7 +49,7 @@ const PersonDetail: React.FC<Props> = ({
     typeArrayNumber,
     typeArrayFixed,
     typeAny,
-    typeObject,
+    typeCSSProp,
     typeStringExt,
     typeStringExtV,
     typeUnion,
@@ -73,7 +74,7 @@ const PersonDetail: React.FC<Props> = ({
     return (
         typeBoolean ? (
             <div>
-                <p style={typeObject}>
+                <p style={typeCSSProp}>
                     {[
                         typeString,
                         typeNumber,

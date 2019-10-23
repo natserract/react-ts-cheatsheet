@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import RTCEx1 from './components/rtc-example-1'
 import RTCEx2 from './components/rtc-example-2'
+import RTCEx4 from './components/rtc.example-4'
 
 
 const App: React.FC = () => {
@@ -18,7 +19,7 @@ const App: React.FC = () => {
           typeArrayNumber={[0, 3, 5, 8]}
           typeArrayFixed={['Fantasktic', 1, 2019, 'Inc']}
           typeAny="Hey!"
-          typeObject={{ color: '#fff', opacity: .4 }}
+          typeCSSProp={{ color: '#fff', opacity: .4 }}
           typeStringExt="VSCode"
           typeStringExtV="TypeScript"
           typeUnion="Black"
@@ -30,9 +31,9 @@ const App: React.FC = () => {
           data={['Developer', 2019]}
           typeMouseEvent={() => console.log("Hello! Thank you for click")}
           typeFocusEvent={() => console.log("Focused")}
-        >
-          <p>Children</p>
-        </RTCEx2>
+        />
+
+
 
       </header>
     </div>
