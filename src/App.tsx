@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import RTCEx1 from './components/rtc-example-1'
+import RTCEx2 from './components/rtc-example-2'
 
 
 const App: React.FC = () => {
@@ -10,7 +11,7 @@ const App: React.FC = () => {
 
         {/* Ex1 */}
         <RTCEx1
-          typeBoolean={ true }
+          typeBoolean={true}
           typeString="Alfin"
           typeNumber={27}
           typeArrayString={['Designer', 'Developer', 'Reader', 'etc']}
@@ -24,7 +25,14 @@ const App: React.FC = () => {
           typeVoid={() => console.log("Hello! this works")}
         />
 
-
+        <RTCEx2
+          firstName="Alfin"
+          data={['Developer', 2019]}
+          typeMouseEvent={() => console.log("Hello! Thank you for click")}
+          typeFocusEvent={() => console.log("Focused")}
+        >
+          <p>Children</p>
+        </RTCEx2>
 
       </header>
     </div>

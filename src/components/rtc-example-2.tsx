@@ -2,31 +2,39 @@
 import * as React from 'react'
 
 /*  
-  --- Event, Generic Types ---
+  --- handleEvent, Generic Types, Children, Function ---
 */
 
 //Generic
-interface Type<TValues, TDump>{
+interface Person<T> {
+    firstName: T
+}
+
+interface Type<TValues, TDump> extends Person<string> {
     data: [TValues, TDump];
 }
 
 interface InitialName extends Type<string, number> {
-    handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void,  //event 
+    typeMouseEvent: (event: React.MouseEvent<HTMLButtonElement>) => void,  // mouse event 
+    typeFocusEvent: (event: React.FocusEvent<HTMLInputElement>) => void,  //Focus event
+    children: React.ReactNode //Children
 }
 
-const initialFunc = (message: string) => {
-    console.log(message)
-}
-
-const RTCEx2: React.FC<InitialName>= ({ handleClick, data }) => {
+const RTCEx2: React.FC<InitialName> = ({ typeMouseEvent, typeFocusEvent, data, firstName, children }) => {
     return (
         <div>
-            <p>Hello</p>
-            <button onClick={handleClick}>
-                Click Me
+            {/* return in array */}
+            <p>{[data, firstName]}</p>
+
+            {/* Click event */}
+            <button onClick={typeMouseEvent}>
+                Click Me <br/>
             </button>
-            <p>{data}</p>
-            {initialFunc}
+
+            {/* Focus event */}
+            <input type="text" onFocus={typeFocusEvent} />
+
+            {children}
         </div>
     )
 }
