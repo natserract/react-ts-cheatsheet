@@ -36,7 +36,7 @@ type T = {
 }
 
 
-//nested interface
+//extends interface
 interface Props extends Detail, listsColor {
     typeString: string,   //string
     typeNumber: number,    // number
