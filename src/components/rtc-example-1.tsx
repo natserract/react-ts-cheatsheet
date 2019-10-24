@@ -1,6 +1,15 @@
 
-/* Interface 
-  --- Data Types (Props), extends interface, enum, readonly---
+/* 
+    --- 
+        Interface,
+        Type, 
+        Data Types (Props), 
+        Extends, 
+        Enum, 
+        readonly, 
+        render props, 
+        typing pattern
+    ---
 */
 
 import React from 'react'
@@ -36,7 +45,7 @@ interface Props extends Detail, listsColor {
     typeArrayFixed: [string, number, number, string]  //Fixed types in array
     typeAny: any, //Any types
     typeCSSProp: React.CSSProperties //Object type,
-    typeBoolean: boolean, //Boolean type
+    typeBoolean: boolean, //CSS Properties
     optionType?: string // //Not type (Just optional properties you can declare)
     typeVoid: () => void, //Void types: you can return type of the functions not value
 }

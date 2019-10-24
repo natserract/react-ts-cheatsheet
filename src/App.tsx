@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import RTCEx1 from './components/rtc-example-1'
 import RTCEx2 from './components/rtc-example-2'
-import RTCEx4 from './components/rtc.example-4'
+import RTCEx3 from './components/rtc-example-3'
 
 
 const App: React.FC = () => {
@@ -15,7 +15,7 @@ const App: React.FC = () => {
           typeBoolean={true}
           typeString="Alfin"
           typeNumber={27}
-          typeArrayString={['Designer', 'Developer', 'Reader', 'etc']}
+          typeArrayString={['Designer', 'Developer', 'Learner', 'etc']}
           typeArrayNumber={[0, 3, 5, 8]}
           typeArrayFixed={['Fantasktic', 1, 2019, 'Inc']}
           typeAny="Hey!"
@@ -33,8 +33,7 @@ const App: React.FC = () => {
           typeFocusEvent={() => console.log("Focused")}
         />
 
-
-
+        <RTCEx3/>
       </header>
     </div>
   );

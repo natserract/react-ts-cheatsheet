@@ -1,6 +1,13 @@
 
 /*  
-  --- handleEvent, Generic Types, Children, Function, Type-Definitions, Generic Component ---
+    --- 
+        handleEvent, 
+        Generic Types, 
+        Children, 
+        Function, 
+        Type-Definitions, 
+        Generic Component 
+    ---
 */
 
 import * as React from 'react'
@@ -27,6 +34,8 @@ interface IFrameHTMLAttribute extends React.IframeHTMLAttributes<HTMLIFrameEleme
     height: number | string
     marginHeight: number | undefined,
     title: string
+
+    //... you can add much more Html attributes here...
 }
 
 //Dom Attributes
@@ -34,18 +43,18 @@ interface DOMAttribute {
     onChange?: React.FormEventHandler
     onClick?: React.MouseEventHandler
 
-    //... you can add much more here...
+    //... you can add much more DOM Attributes  here...
 }
 
 //Generic component (as generic lists)
 interface ListsProps<T> {
     items: T[] 
-    itemDisplay: (item: T, key:T) => JSX.Element //return JSX Element / React Nodes
+    itemDisplay: (item: T, key:T) => JSX.Element | null //return JSX Element / React Nodes
 }
 
 
 //Component
-const GenericComponent:React.FC<ListsProps<number>> = ({ items, itemDisplay }:any) => {
+const GenericComponent:React.FC<ListsProps<number>> = ({ items, itemDisplay }) => {
     return <div>{ items.map(itemDisplay) }</div>
 }
 
