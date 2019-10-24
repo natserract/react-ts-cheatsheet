@@ -8,7 +8,7 @@ import RTCEx3 from './components/rtc-example-3'
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" style={{ padding: 50 }}>
 
         {/* Ex1 */}
         <RTCEx1
