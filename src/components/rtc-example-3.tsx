@@ -53,7 +53,25 @@ const reducer = (state: State, action: Action) => {
 }
 
 
+interface IContext {
+    name: string
+    role: string,
+    age: number
+}
+
+// Context - Hooks UseContext Section 
+const Context = React.createContext<IContext>({
+    name: 'Alfin',
+    role: 'Developer',
+    age: 19
+})
+
 const RTCEx3: React.FC<Props> = () => {
+    
+    // Hooks - UseContext 
+    let getValueContext = React.useContext(Context); //Hooks - UseContext
+    const { name, role, age } = getValueContext //Desctructural
+    console.log(`My name is: ${name}, Also known as ${role}, My age is: ${age}`); //View by console
 
     //Hooks - Use state
     const [value] = React.useState<IUSer>({
