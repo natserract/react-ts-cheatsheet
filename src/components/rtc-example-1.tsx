@@ -8,7 +8,8 @@
         Enum, 
         readonly, 
         render props, 
-        typing pattern
+        typing pattern,
+        Array
     ---
 */
 
@@ -33,6 +34,12 @@ type listsColor = {
 type T = {
     readonly xProp: string,
     readonly yProp: number,
+}
+
+// type for Default Values
+type ArrayL = {
+    name: string,
+    age: number
 }
 
 
@@ -76,9 +83,22 @@ const PersonDetail: React.FC<Props> = ({
         xProp: 'Alfin',
         yProp: 2
     }
-    
+
     //(Just read only hanya bisa dibaca, tidak bisa diassign values) Contoh:
     // x.xProp='Benjamin' // => Maka akan Error
+
+
+    //Default Values
+    const defaultValues: Array<ArrayL> = [
+        {
+            name: 'Alfin',
+            age: 19
+        }, {
+            name: 'Aka',
+            age: 20
+        }
+    ];
+
 
     return (
         typeBoolean ? (
