@@ -11,12 +11,12 @@ import {
     NavigationScreeenComponent, 
     NavigationScreenProp } from 'react-navigation'
 
-interface NavInterfave extends NavigationScreenProps{
+interface NavInterface extends NavigationScreenProps{
     navigation: NavigationScreenProp<any, any> //should be two params
 }
 
 //Define component with NavigationScreeenComponent (must)
-const Component:NavigationScreeenComponent<NavInterfave> = ({ navigation }) => {
+const Component:NavigationScreeenComponent<NavInterface> = ({ navigation }) => {
     const clickFunction = () => navigation.navigate('Screen Param')
 
     return <>{/* your compoenent here */  }</>
