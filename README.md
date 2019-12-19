@@ -1,6 +1,6 @@
 
 # React-Typescript-Cheatsheet ♥️
-Ini adalah cheasheet yg saya buat untuk diri saya sendiri. Sorry jika dirty code. Kamu bisa browse the file in directory[src/components/] untuk melihat example penggunaan cheatsheet.
+This is the cheasheet I made for myself. Sorry if the code is dirty. You can browse for files in the [src/component/] directory to see examples.
 
 ## Quick Example
 
