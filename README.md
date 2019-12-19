@@ -1,6 +1,6 @@
 
 # React-Typescript-Cheatsheet ♥️
-This is the cheasheet I made for myself. Sorry if the code is dirty. You can browse for files in the [src/component/] directory to see examples.
+This is the cheasheet I made for myself. Sorry if the code is dirty. You can browse for files in the `src/component/` directory to see examples.
 
 ## Quick Example
 
